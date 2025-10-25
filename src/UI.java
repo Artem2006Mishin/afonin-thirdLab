@@ -1,5 +1,6 @@
+package src;
+
 import java.util.Scanner;
-import src.league.League;
 
 public class UI {
   private static final Scanner READER = new Scanner(System.in);
@@ -21,19 +22,28 @@ public class UI {
       System.out.print("Введите вместимость стадиона: ");
       int capacity = Integer.parseInt(READER.nextLine());
 
-      League.push(name, wins, capacity);
     } else {
       System.out.print("Введите название гейм-платформы: ");
       String platform = READER.nextLine();
 
-      League.push(name, wins, platform);
+      EsportsTeam.push(name, wins, platform);
     }
+  }
+
+  // сюда тоже валидацию!
+  private void printTeam () {
+    System.out.print("Введите название команды, которую хотите найти: ");
+    String target = READER.nextLine();
+
+    String result = EsportsTeam.findTeamByName(target);
+    System.out.println(result);
   }
 
   // run() - спрашивает пользователя команды
   public void run () {
     createTeam();
+    System.out.println();
 
-    
+    printTeam();
   }
 }

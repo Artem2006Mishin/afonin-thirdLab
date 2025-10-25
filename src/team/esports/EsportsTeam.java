@@ -1,25 +1,22 @@
 package src.team.esports;
 
 import src.team.FootballTeam;
+import src.team.sports.SportsTeam;
 
-public class EsportsTeam extends FootballTeam{
-  private GamePlatform platform;
-  
-  public EsportsTeam () {
+public class EsportsTeam extends FootballTeam {
+  private String platform;
+
+  public EsportsTeam() {
     super();
-    platform = new GamePlatform();
   }
 
-  public EsportsTeam (String teamName, int wins, String platformName) {
+  public EsportsTeam(String teamName, int wins) {
     super(teamName, wins);
-    platform = new GamePlatform(platformName);
   }
 
-  public void fillTeam () {
-
-  }
-
-  public GamePlatform getPlatform () {
-    return platform;
+  @Override
+  public void push(String name, int wins) {
+    FootballTeam team = new SportsTeam(name, wins);
+    FootballTeam.league.add(team);
   }
 }

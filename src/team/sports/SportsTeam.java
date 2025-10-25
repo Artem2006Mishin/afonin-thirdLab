@@ -1,26 +1,25 @@
 package src.team.sports;
 
 import src.team.FootballTeam;
-import src.team.esports.GamePlatform;
 
 public class SportsTeam extends FootballTeam {
-  private Stadium stadium;
+  private int stadiumCapacity;
   
   public SportsTeam () {
     super();
-    stadium = new Stadium();
+    this.stadiumCapacity = 0;
   }
 
-  public SportsTeam (String teamName, int wins, int capacity) {
+  public SportsTeam (String teamName, int wins, int stadiumCapacity) {
     super(teamName, wins);
-    stadium = new Stadium(capacity);
+    this.stadiumCapacity = stadiumCapacity;
   }
 
-  public void fillTeam () {
-    
-  }
+  @Override
+  public void push (String name, int wins){};
 
-  public Stadium getStadium () {
-    return stadium;
+  public void push (String name, int wins, int stadiumCapacity) {
+    FootballTeam team = new SportsTeam(name, wins, stadiumCapacity);
+    FootballTeam.league.add(team);
   }
 }

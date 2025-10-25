@@ -1,9 +1,14 @@
 package src.team;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class FootballTeam {
+  protected static List<FootballTeam> league = new ArrayList<>();
+
   protected String name;
   protected int wins;
-
+  
   protected FootballTeam () {
     this.name = "Unknown team";
     this.wins = 0;
@@ -22,5 +27,7 @@ public abstract class FootballTeam {
     return this.wins;
   }
 
-  protected abstract void fillTeam ();
+  protected abstract void push (String name, int wins);
+
+  // protected abstract void fillTeam ();
 }

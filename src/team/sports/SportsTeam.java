@@ -3,23 +3,26 @@ package src.team.sports;
 import src.team.FootballTeam;
 
 public class SportsTeam extends FootballTeam {
-  private int stadiumCapacity;
-  
-  public SportsTeam () {
-    super();
-    this.stadiumCapacity = 0;
-  }
+    private int stadiumCapacity;
 
-  public SportsTeam (String teamName, int wins, int stadiumCapacity) {
-    super(teamName, wins);
-    this.stadiumCapacity = stadiumCapacity;
-  }
+    public SportsTeam() {
+        super();
+        this.stadiumCapacity = 0;
+    }
 
-  @Override
-  public void push (String name, int wins){};
+    public SportsTeam(String teamName, int wins, int stadiumCapacity) {
+        super(teamName, wins);
+        this.stadiumCapacity = stadiumCapacity;
+    }
 
-  public void push (String name, int wins, int stadiumCapacity) {
-    FootballTeam team = new SportsTeam(name, wins, stadiumCapacity);
-    FootballTeam.league.add(team);
-  }
+    @Override
+    public void push(String name, int wins) {
+        FootballTeam team = new SportsTeam(name, wins, 0);
+        FootballTeam.league.add(team);
+    };
+
+    public void push(String name, int wins, int stadiumCapacity) {
+        FootballTeam team = new SportsTeam(name, wins, stadiumCapacity);
+        FootballTeam.league.add(team);
+    }
 }

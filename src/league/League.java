@@ -18,4 +18,6 @@ public class League {
     EsportsTeam team = new EsportsTeam(name, wins, platformName);
     league.add(team);
   }
+
+  
 }

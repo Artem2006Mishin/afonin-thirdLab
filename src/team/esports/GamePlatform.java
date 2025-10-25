@@ -10,4 +10,8 @@ public class GamePlatform {
   public GamePlatform (String name) {
     this.name = name;
   }
+
+  public String getName () {
+    return name;
+  }
 }

@@ -19,4 +19,8 @@ public class SportsTeam extends FootballTeam {
   public void fillTeam () {
     
   }
+
+  public Stadium getStadium () {
+    return stadium;
+  }
 }

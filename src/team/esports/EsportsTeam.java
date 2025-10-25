@@ -18,4 +18,8 @@ public class EsportsTeam extends FootballTeam{
   public void fillTeam () {
 
   }
+
+  public GamePlatform getPlatform () {
+    return platform;
+  }
 }

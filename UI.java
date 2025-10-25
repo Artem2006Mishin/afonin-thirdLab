@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 import src.league.League;
 
 public class UI {
@@ -16,9 +15,9 @@ public class UI {
     System.out.println("Введите 1 если спортивная");
     System.out.println("Введите 2 если киберспортивная");
     System.out.print("Введите цифру: ");
-    String choose = READER.nextLine();
+    int choose = Integer.parseInt(READER.nextLine());
     
-    if (choose == "1") {
+    if (choose == 1) {
       System.out.print("Введите вместимость стадиона: ");
       int capacity = Integer.parseInt(READER.nextLine());
 
@@ -30,6 +29,7 @@ public class UI {
       League.push(name, wins, platform);
     }
   }
+
   // run() - спрашивает пользователя команды
   public void run () {
     createTeam();

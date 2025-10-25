@@ -4,14 +4,14 @@ public abstract class FootballTeam {
   protected String name;
   protected int wins;
 
-  public FootballTeam () {
+  protected FootballTeam () {
     this.name = "Unknown team";
     this.wins = 0;
   }
 
-  public FootballTeam (String name, int numbers, int year) {
+  protected FootballTeam (String name, int wins) {
     this.name = name;
-    this.wins = numbers;
+    this.wins = wins;
   }
 
   public String getName () {
@@ -22,5 +22,5 @@ public abstract class FootballTeam {
     return this.wins;
   }
 
-  // generateTeam - статический метод который запрашивает UI
+  protected abstract void fillTeam ();
 }

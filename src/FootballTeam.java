@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import java.util.Comparator;
 
 public abstract class FootballTeam {
-  protected static List<FootballTeam> league = new ArrayList<>();
+  protected static List<FootballTeam> league = new ArrayList<>(); // список команд
 
-  protected String name;
-  protected int wins;
+  protected String name; // название команды
+  protected int wins; // кол-во побед
 
   /**
    * Конструктор по умолчанию

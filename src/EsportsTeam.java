@@ -1,7 +1,7 @@
 package src;
 
 public class EsportsTeam extends FootballTeam {
-  protected String platform;
+  protected String platform; // название платформы
 
   /**
    * Конструктор по умолчанию
@@ -38,18 +38,27 @@ public class EsportsTeam extends FootballTeam {
   /**
    * Генерирует команды
    */
-  protected static void fillTeam () {
+  public static void fillTeam () {
     push("Natus Vincere", 11, "PC");
     push("Astralis", 8, "PC");
     push("G2 Esports", 3, "PC");
   }
 
+    /**
+     * Возвращает строку с информацией о команде
+     */
   @Override
   public String getInfo() {
     return super.getInfo() +
-    String.format("игровая платформа: %s%n", this.platform);
+    String.format("игровая платформа: %s", this.platform);
   }
 
+    /**
+     * Редактирует команду
+     *
+     * @param field поле которое нужно отредактировать
+     * @param newValue новое значение
+     */
   @Override
   protected void editTeam (String field, String newValue) {
     if (field.equals("platform")) {
